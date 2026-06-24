@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal de Avisos Interno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-one"></div>
+  <div class="bg-orb orb-two"></div>
+
+  <header class="hero">
+    <nav class="navbar">
+      <div class="brand">
+        <span class="brand-icon">✦</span>
+        <span>Cartelera Interna</span>
+      </div>
+      <span class="status">Sistema activo</span>
+    </nav>
+
+    <section class="hero-content">
+      <span class="eyebrow">Portal institucional</span>
+      <h1>Portal de Avisos</h1>
+      <p>Un tablón interno moderno para publicar comunicados, recordatorios y mensajes importantes de forma rápida, clara y ordenada.</p>
+    </section>
+  </header>
+
+  <main class="layout">
+    <section class="panel form-panel">
+      <div class="section-heading">
+        <span class="section-number">01</span>
+        <div>
+          <h2>Nuevo aviso</h2>
+          <p>Creá un comunicado breve para la cartelera principal.</p>
+        </div>
+      </div>
+
+      <form id="noticeForm" class="form">
+        <div class="field">
+          <label for="author">Autor</label>
+          <input type="text" id="author" placeholder="Ej: Administración" maxlength="35" required />
+        </div>
+
+        <div class="field">
+          <label for="title">Título</label>
+          <input type="text" id="title" placeholder="Ej: Reunión general" maxlength="55" required />
+        </div>
+
+        <div class="field">
+          <label for="category">Categoría</label>
+          <select id="category" required>
+            <option value="General">General</option>
+            <option value="Urgente">Urgente</option>
+            <option value="Evento">Evento</option>
+            <option value="Recordatorio">Recordatorio</option>
+            <option value="Mantenimiento">Mantenimiento</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Mensaje</label>
+          <textarea id="message" placeholder="Escribí el aviso..." maxlength="180" required></textarea>
+          <div class="char-line">
+            <span>Máximo recomendado: mensaje corto</span>
+            <strong><span id="charCount">0</span>/180</strong>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Publicar aviso</button>
+      </form>
+    </section>
+
+    <section class="panel board-panel">
+      <div class="board-top">
+        <div class="section-heading">
+          <span class="section-number">02</span>
+          <div>
+            <h2>Cartelera principal</h2>
+            <p>Los avisos se muestran por orden de llegada.</p>
+          </div>
+        </div>
+
+        <button id="clearBtn" class="btn btn-danger" type="button">Limpiar</button>
+      </div>
+
+      <div class="tools">
+        <input type="search" id="searchInput" placeholder="Buscar por título, autor o mensaje..." />
+        <select id="filterCategory">
+          <option value="Todas">Todas</option>
+          <option value="General">General</option>
+          <option value="Urgente">Urgente</option>
+          <option value="Evento">Evento</option>
+          <option value="Recordatorio">Recordatorio</option>
+          <option value="Mantenimiento">Mantenimiento</option>
+        </select>
+      </div>
+
+      <div class="stats">
+        <div>
+          <strong id="totalNotices">0</strong>
+          <span>Avisos publicados</span>
+        </div>
+        <div>
+          <strong id="urgentNotices">0</strong>
+          <span>Urgentes</span>
+        </div>
+      </div>
+
+      <div id="noticeList" class="notice-list"></div>
+
+      <div id="emptyState" class="empty-state">
+        <span>☾</span>
+        <h3>No hay avisos publicados</h3>
+        <p>Cuando se publique un mensaje, aparecerá en esta cartelera.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>
+      © 2026 · Portal de Avisos Interno<br />
+      Desarrollado por <strong>Facundo Santiago Gorriti</strong>
+    </p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
